@@ -4,6 +4,20 @@
       <div class="container">
         <div class="navbar-brand">
           <a
+              class="navbar-item navbar-icon"
+              :class="{ 'is-inactive': showMenu }"
+              rel="noreferrer"
+              v-for="(link, key) in links"
+              :key="key"
+              :href="link.url"
+              :target="link.target"
+          >
+            <i
+                v-if="link.icon"
+                :class="['fa-fw', link.icon, { 'mr-2': link.name }]"
+            ></i>
+          </a>
+          <a
             role="button"
             aria-label="menu"
             aria-expanded="false"
